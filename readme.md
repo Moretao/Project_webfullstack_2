@@ -66,3 +66,37 @@
     - rota para lidar com usuários
 
 - users.json e cities.json são arquivos para a instalação
+
+# Projeto Cliente
+- Projeto criado com o script Create-React-App desenvolvido pela própria equipe criadora do React, do Facebook. Tal projeto é levantado juntamente com a aplicação Node + Express, que serve uma API para o nosso banco de dados.
+- Comandos para levantar o Servidor, o Cliente e ambos os projetos simultaneamente:
+```bash
+npm run server
+npm run client
+npm run dev
+```
+- Scripts que estão no `package.json` do projeto raíz:
+```json
+// package.json
+{
+    // [...]
+    scripts: {
+        "server": "nodemon app.js",
+        "client": "cd cliente_react && npm start",
+        "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+        // [...]
+    },
+    // [...]
+}
+```
+- O projeto cliente, chamado de `cliente_react`, tem em sua estrutura 5 pastas principais:
+  - `Components`: Responsável por conter os componentes usados de forma global na aplicação;
+  - `Pages`: Responsável por conter as páginas da aplicação;
+  - `Router`: Responsável por conter os arquivos referentes ao gerenciamento de rotas da aplicação;
+  - `Store`: Responsável por conter os arquivos referetnes aos Contextos da aplicação ou gerenciamento de um estado global da aplicação.
+
+- O Componente `Authenticator` tem como função um Serviço que monitora e controla a autenticação do usuário.
+
+- O Componente `AuthRoute` serve como um High Order Component, que por sua vez atribui como side-effect para qualquer página filha uma auto-navegação para `HomePage` caso usuário não esteja autenticado e tentando acessar tal rota.
+
+- O Componente `Template` serve como o esqueleto da aplicação, guiando os setores de `Header` e "Corpo" da aplicação, onde cada um possui seu arquivo de estilo.
