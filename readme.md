@@ -1,3 +1,16 @@
+# Projeto Fullstack
+## Passo a passo para inicialização
+1. Faça o download e instale a versão LTS do Node.js;
+2. Faça o download e instale a versão estável do MySQL;
+3. Através de um Terminal (Linux) ou de uma janela de CMD/Powershell (Windows) navegue até a pasta raíz da aplicação e execute o comando abaixo para instalar as dependências do projeto:
+```bash
+npm install && cd cliente_react && npm install
+```
+4. Agora para levantar o servidor Node e também a aplicação React, simultaneamente, execute o seguinte comando:
+```bash
+npm run dev
+```
+
 ## API 
 ### Node.js - Express.js
 - Desenvolvido com express.js
