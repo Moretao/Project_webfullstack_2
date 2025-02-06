@@ -1,7 +1,26 @@
+import { useEffect } from 'react';
+
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    const callApi = async () => {
+      try {
+        const response = await fetch("/api");
+        const body = await response.json();
+
+        console.log("Succesfully called API \"/api\" endpoint", { body })
+  
+        return body
+      } catch (error) {
+        return console.log("Error calling API \"/api\" endpoint")
+      }
+    };
+
+    callApi()
+  }, [])
+  
   return (
     <div className="App">
       <header className="App-header">
