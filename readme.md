@@ -76,7 +76,7 @@ npm run client
 npm run dev
 ```
 - Scripts que estão no `package.json` do projeto raíz:
-```json
+```js
 // package.json
 {
     // [...]
@@ -100,3 +100,9 @@ npm run dev
 - O Componente `AuthRoute` serve como um High Order Component, que por sua vez atribui como side-effect para qualquer página filha uma auto-navegação para `HomePage` caso usuário não esteja autenticado e tentando acessar tal rota.
 
 - O Componente `Template` serve como o esqueleto da aplicação, guiando os setores de `Header` e "Corpo" da aplicação, onde cada um possui seu arquivo de estilo.
+
+- Credenciais de Admin:
+```
+login: admin@admin.com
+senha: senhaAdmin1
+```

@@ -16,7 +16,12 @@ const CitiesListPage = () => {
       return
     }
 
-    const filteredCities = (cities || []).filter(city => city.name.includes(cityNameFilter));
+    const filteredCities = (cities || []).filter((city) => {
+      const nameFlag = city.name.toLocaleLowerCase().includes(cityNameFilter.toLocaleLowerCase())
+      const countryFlag = city.country.toLocaleLowerCase().includes(cityNameFilter.toLocaleLowerCase())
+
+      return nameFlag || countryFlag;
+    });
     setFilteredCities(filteredCities);
   }, [cityNameFilter])
 
@@ -64,11 +69,11 @@ const CitiesListPage = () => {
           <h4>Filtros</h4>
 
           <div class="col form-group mb-2">
-            <label for="cityName">Nome da Cidade</label>
+            <label for="cityName">Pesquise a Cidade ou o País</label>
             <input
               type="text"
               id="cityName"
-              placeholder="Nome da Cidade"
+              placeholder="Nome da Cidade ou País"
               className="form-control mt-2"
               onChange={evt => setCityNameFilter(evt.target.value)}
             />
