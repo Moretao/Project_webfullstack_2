@@ -1,12 +1,24 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import { AuthContext } from "../../store/contexts";
+import { NavLink } from "react-router";
 
 const CitiesListPage = () => {
   const Auth = useContext(AuthContext)
-  
-  const [cities, setCities] = useState()
-  const [filteredCities, setFilteredCities] = useState()
+
+  const [cities, setCities] = useState();
+  const [filteredCities, setFilteredCities] = useState();
+  const [cityNameFilter, setCityNameFilter] = useState('');
+
+  useEffect(() => {
+    if (!cityNameFilter) {
+      setFilteredCities(undefined)
+      return
+    }
+
+    const filteredCities = (cities || []).filter(city => city.name.includes(cityNameFilter));
+    setFilteredCities(filteredCities);
+  }, [cityNameFilter])
 
   useEffect(() => {
     const fetchCities = async () => {
@@ -36,10 +48,43 @@ const CitiesListPage = () => {
 
   return (
     <div className="container">
-      <h1>Olá de CitiesListPage</h1>
+      <div className="row">
+        <div className="col col-10">
+          <h1>Cidades</h1>
+        </div>
+        <div className="col">
+          <NavLink className="btn btn-secondary" to="/cities/new">
+            Nova Cidade
+          </NavLink>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col">
+          <h4>Filtros</h4>
+
+          <div class="col form-group mb-2">
+            <label for="cityName">Nome da Cidade</label>
+            <input
+              type="text"
+              id="cityName"
+              placeholder="Nome da Cidade"
+              className="form-control mt-2"
+              onChange={evt => setCityNameFilter(evt.target.value)}
+            />
+          </div>
+        </div>
+        {/* <div className="col">
+          <input
+            type="button"
+            title="Pesquisar"
+            className="form-control"
+          />
+        </div> */}
+      </div>
 
       <div className="row mt-3">
-        <table className="table">
+        <table className="table table-striped cities-list-table">
           <thead>
             <tr>
               <th scope="col">#</th>

@@ -80,7 +80,7 @@ const LoginPage = () => {
           </form>
         </div>
         <div className="col"></div>
-        </div>
+      </div>
     </div>
   );
 }
