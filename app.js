@@ -12,6 +12,7 @@ import installation from './src/routes/installation.js'
 dotenv.config()
 
 const app = express()
+const port = 5000
 
 app.use(session({
     secret: process.env.SECRET_KEY,
@@ -37,6 +38,8 @@ app.get('/', (req, res) => {
     res.status(200).send({ msg: 'OK!' })
 })
 
-app.listen(3000)
+app.listen(port, () => {
+    console.log("Application running on port " + port)
+})
 
 export default app
