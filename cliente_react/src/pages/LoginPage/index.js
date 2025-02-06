@@ -1,8 +1,12 @@
-import { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+
+import { AuthContext } from "../../store/contexts";
 
 import "./LoginPage.css"
 
 const LoginPage = () => {
+  const Auth = useContext(AuthContext)
+  
   useEffect(() => {
     const callApi = async () => {
       try {
@@ -20,8 +24,15 @@ const LoginPage = () => {
     callApi()
   }, [])
 
+  const handleClick = () => {
+    Auth.setCurrentUser({ email: "gabrieltmm@gmail.com" })
+  }
+
   return (
-    <h1>Olá da LoginPage</h1>
+    <React.Fragment>
+      <h1>Olá da LoginPage</h1>
+      <button onClick={handleClick}>Fake</button>
+    </React.Fragment>
   );
 }
 

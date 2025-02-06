@@ -1,17 +1,21 @@
 import { Routes, Route } from "react-router";
 
-import Template from './components/Template';
 import routes from "./router/routes";
+import Template from "./components/Template";
+import Authenticator from "./components/Authenticator";
 
 const App = () => {
+
   return (
-    <Template>
-      <Routes>
-        {routes.map(({ element, path, name }) => (
-          <Route path={path} element={element} />
-        ))}
-      </Routes>
-    </Template>
+    <Authenticator>
+      <Template>
+        <Routes>
+          {routes.map(({ element, path, name }) => (
+            <Route path={path} element={element} />
+          ))}
+        </Routes>
+      </Template>
+    </Authenticator>
   );
 };
 
