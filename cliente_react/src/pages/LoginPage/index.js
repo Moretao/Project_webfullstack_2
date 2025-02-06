@@ -41,6 +41,7 @@ const LoginPage = () => {
       if (response.status == 200) {
         const userData = await response.json();
         Auth.setCurrentUser(userData);
+        localStorage.setItem("Auth", JSON.stringify(userData));
         navigate("/");
       }
     } catch (error) {
