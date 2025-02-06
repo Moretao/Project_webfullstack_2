@@ -28,7 +28,7 @@
 - citiesHelpers.js
     - define funções de auxílio para a rota de cidades, lidando com o banco de dados e cache
 
-- instalationHelper.js
+- installationHelper.js
     - define funções de auxílio para a rota de instalação, lidando com o banco de dados e cache 
 
 - loginHelper.js
@@ -58,7 +58,7 @@
 ## Routes
 - cities.js
     - rota para lidar com cidades
-- instalation.js
+- installation.js
     - rota para instalação inicial para testes simples
 - login.js
     - rota para autenticação de usuários e administradores
