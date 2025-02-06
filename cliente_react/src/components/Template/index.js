@@ -4,9 +4,9 @@ import "./Template.css"
 
 function Template({ children }) {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid px-0">
       <Header />
-      <div className="container">
+      <div id="template-overhaul-container">
         {children}
       </div>
     </div>

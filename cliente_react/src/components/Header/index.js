@@ -13,7 +13,7 @@ function Header() {
   }
 
   return (
-    <nav className="navbar bg-body-tertiary">
+    <nav className="navbar bg-body-tertiary header-container">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">Aplicação Frontend</NavLink>
 

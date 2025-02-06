@@ -21,7 +21,9 @@ const HomePage = () => {
   }, [])
 
   return (
-    <h1>Olá da HomePage</h1>
+    <div className="container">
+      <h1>Olá da HomePage</h1>
+    </div>
   );
 }
 
