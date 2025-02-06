@@ -22,8 +22,6 @@ const LoginPage = () => {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
 
-    debugger;
-
     try {
       const requestBody = {
         email: emailField,

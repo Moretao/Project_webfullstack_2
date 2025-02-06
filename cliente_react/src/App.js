@@ -16,7 +16,7 @@ const App = () => {
     if (user) {
       Auth.setCurrentUser(user)
     }
-  }, [])
+  }, []);
 
   const loadAuth = () => {
     const userData = localStorage.getItem("Auth");
@@ -26,7 +26,7 @@ const App = () => {
     }
     
     return JSON.parse(userData)
-  }
+  };
 
   const handleRoutesRendering = ({ element: CurrentPage, path, requireAuth }) => {
     if (requireAuth) {
@@ -45,7 +45,7 @@ const App = () => {
     return (
       <Route path={path} element={<CurrentPage />} />
     );
-  }
+  };
 
   return (
     <Template>
