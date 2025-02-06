@@ -39,7 +39,7 @@ const CitiesListPage = () => {
       <h1>Olá de CitiesListPage</h1>
 
       <div className="row mt-3">
-        <table className="tables">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">#</th>
